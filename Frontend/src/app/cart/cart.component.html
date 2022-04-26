@@ -1,0 +1,40 @@
+<div class="content" role="main">
+<h1 style="text-align: center;">My shopping cart</h1>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Count</th>
+            <th>Price per unity</th>
+            <th>Total price</th>
+        </tr>
+    </thead>
+    <tbody style="text-align: center;">
+        <tr *ngFor="let item of items">
+            <td><button (click)="removeSingleItem(item.id)" style="text-align: center;">REMOVE</button></td>
+            <td><img src={{item.image}}></td>
+            <td><a [routerLink]="['', 'item', item.id]">{{item.name}}</a></td>
+            <td>{{item.count}}</td>
+            <td>{{item.pricePerUnity}} ₽</td>
+            <td>{{item.totalPrice}} ₽</td>
+        </tr>
+        <tr style="outline: thin solid">
+            <td>TOTAL</td>
+            <td></td>
+            <td></td>
+            <td>{{totalCount}}</td>
+            <td></td>
+            <td>{{grandTotalPrice}} ₽</td>
+        </tr>
+        
+    </tbody>
+    
+</table>
+<div style="text-align: center;">
+    <button (click)="saveOrder()" >ORDER</button>
+    <button (click)="clearCart()" >CLEAR</button>
+</div>
+</div>

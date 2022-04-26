@@ -1,0 +1,22 @@
+
+<div class="content" role="main">
+
+    <!-- Highlight Card -->
+    <div class="card highlight-card card-large" (click) = "hello()">
+      <span>{{ title }} app is running!</span>    <!-- Template Interpolation -->
+    </div>
+  
+    <div *ngIf="title == 'PRF'">
+      <span>
+        {{1.2 * 1 + 12 / 12 - 2}}
+      </span>
+    </div>
+    <ul>
+      <li *ngFor="let x of example" (click)="helloFrom(x)">
+        {{x}}
+      </li>
+    </ul>
+    <input type="text" [(ngModel)]="title">
+    <button (click)="goToSecond()">Second</button>
+    <a [routerLink]="['/login']">Logout</a>
+</div>

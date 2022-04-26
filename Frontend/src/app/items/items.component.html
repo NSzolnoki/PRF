@@ -1,0 +1,24 @@
+<div class="content" role="main">
+
+    <ul>
+        <div *ngFor="let item of items">
+
+            <div class="card">
+                <div class="imgBox">
+                    <img src={{item.ImagePath}} alt="mouse corsair" class="mouse">
+                </div>
+
+                <div class="contentBox">
+                    <h4>{{item.Name}}</h4>
+                    <h2 class="price">{{item.CreditsPrice}} ₽</h2>
+                    <h6>In stock: {{item.inStock}}</h6>
+                    <a [routerLink]="['', 'item', item.Id]" class="buy">Buy Now</a>
+                </div>
+
+            </div>
+
+
+        </div>
+    </ul>
+
+</div>

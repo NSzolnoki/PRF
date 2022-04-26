@@ -1,0 +1,41 @@
+<main class="container" *ngIf="isLoaded">
+
+ 
+    <!-- Left Column / Headphones Image -->
+
+        <div class="imgBox">
+            <img src={{item.ImagePath}} alt="mouse corsair" class="mouse">
+        </div>
+
+   
+   
+    <!-- Right Column -->
+    <div class="right-column">
+   
+      <!-- Product Description -->
+      <div class="product-description">
+        <span>{{item.Name}}</span>
+        <h1>{{item.ShortName}}</h1>
+        <h6>In stock: {{item.inStock}}</h6>
+        <p>{{item.Description}}</p>
+      </div>
+   
+      
+   
+      <!-- Product Pricing -->
+      <div class="product-price">
+        <span>Price: {{item.CreditsPrice}} ₽</span>        
+      </div>
+      <div class="product-price">
+        <input title="Number to buy" type="range" min="1" max={{item.inStock}} value="0" step="1" #ranger (input)="rangeChange(ranger.value)">
+        <span>{{selectedNumber}}</span>
+      </div>
+      <div class="product-price">
+        <span>Total cost: {{selectedNumber * item.CreditsPrice}} ₽</span>
+      </div>
+      <div class="product-price">        
+        <a class="cart-btn" (click)="addToCart()">Add to cart</a>
+      </div>
+    </div>
+
+  </main>

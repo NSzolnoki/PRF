@@ -1,0 +1,10 @@
+{
+    "/server":{
+        "trarget": "https://nszolnoki01.herokuapp.com/",
+        "secure": true,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/server": ""
+        }
+    }
+}
