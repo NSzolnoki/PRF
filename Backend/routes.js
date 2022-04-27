@@ -187,7 +187,6 @@ router.route('/user').get((req, res, next) => {
         })
     
 }).post((req, res, next) => {
-    if(!req.session.userId) return res.status(401).send('You don\'t have access to this endpoint.');
     if (!req.body.uid) {
         if (req.body.username && req.body.email && req.body.password) {
             userModel.findOne({ username: req.body.username }, (err, user) => {
