@@ -14,7 +14,7 @@ const MongoStore = require('connect-mongo');
 const app = express();
 
 const port = process.env.PORT || 3000;
-const dbUrl = 'mongodb+srv://nszolnoki:cIKIBZAM6EDiNqGa@cluster0.fiqx3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+const dbUrl = 'mongodb+srv://USER:PASS@cluster0.fiqx3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 
 mongoose.connect(dbUrl);
 
